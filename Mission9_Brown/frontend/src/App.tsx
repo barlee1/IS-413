@@ -14,7 +14,6 @@ function CollegeTeam({
   state,
   backgroundcolor,
   textcolor,
-  soicallink,
 }: {
   school: string;
   name: string;
@@ -22,26 +21,18 @@ function CollegeTeam({
   state: string;
   backgroundcolor?: string; // Add the color prop
   textcolor?: string;
-  soicallink?: string;
 }) {
   return (
-    <a
-      href={soicallink}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: 'none' }}
+    <div
+      className="card"
+      style={{ backgroundColor: backgroundcolor, color: textcolor }}
     >
-      <div
-        className="card"
-        style={{ backgroundColor: backgroundcolor, color: textcolor }}
-      >
-        <h2>{school}</h2>
-        <h3>Mascot: {name}</h3>
-        <h3>
-          Location: {city}, {state}
-        </h3>
-      </div>
-    </a>
+      <h2>{school}</h2>
+      <h3>Mascot: {name}</h3>
+      <h3>
+        Location: {city}, {state}
+      </h3>
+    </div>
   );
 }
 
